@@ -40,6 +40,38 @@
     </style>
 
     <link rel="stylesheet" href="/index.css">
+
+    <link rel="preload" as="image" href="logo.png">
+    <link rel="preload" as="image" href="33.jpeg">
+    <link rel="preload" as="image" href="44.jpeg">
+    <link rel="preload" as="image" href="55.jpeg">
+    <link rel="preload" as="image" href="ايس تي خوخ.png">
+    <link rel="preload" as="image" href="ايس لاتيه.png">
+    <link rel="preload" as="image" href="سبانيش لاتيه.png">
+    <link rel="preload" as="image" href="كركديه اناناس.png">
+    <link rel="preload" as="image" href="كركديه كلاسيك.png">
+    <link rel="preload" as="image" href="ماتشا.png">
+    <link rel="preload" as="image" href="موهيتو.png">
+    <link rel="preload" as="image" href="بيكان تشيز.png">
+    <link rel="preload" as="image" href="دراقون.png">
+    <link rel="preload" as="image" href="فستقية.png">
+    <link rel="preload" as="image" href="كيكة الجزر.png">
+    <link rel="preload" as="image" href="كيكة تشوكلت.png">
+    <link rel="preload" as="image" href="كيكة تمر.png">
+    <link rel="preload" as="image" href="مكس قيف.png">
+    <link rel="preload" as="image" href="هاتركك.png">
+    <link rel="preload" as="image" href="هني سينابون.png">
+
+    <script>
+        const images = [
+            'logo.png', '33.jpeg', '44.jpeg', '55.jpeg',
+            'ايس تي خوخ.png', 'ايس لاتيه.png', 'سبانيش لاتيه.png',
+            'كركديه اناناس.png', 'كركديه كلاسيك.png', 'ماتشا.png', 'موهيتو.png',
+            'بيكان تشيز.png', 'دراقون.png', 'فستقية.png', 'كيكة الجزر.png',
+            'كيكة تشوكلت.png', 'كيكة تمر.png', 'مكس قيف.png', 'هاتركك.png', 'هني سينابون.png'
+        ];
+        images.forEach(src => { const img = new Image(); img.src = src; });
+    </script>
 </head>
 <body>
     <div id="root"></div>
@@ -140,7 +172,7 @@
 
         const MenuItem = ({ name, image, index, onImageClick }) => {
             return (
-                <AnimateOnLoad delay={100 + index * 100} animation="scale-in">
+                <AnimateOnLoad delay={0} animation="scale-in">
                     <div
                         className="group overflow-hidden rounded-2xl shadow-lg bg-[#f9e7cf] hover:shadow-2xl hover:-translate-y-2 cursor-pointer border-4 border-[#8c542c]"
                         onClick={() => onImageClick(image)}
@@ -162,7 +194,7 @@
 
         const MenuSection = ({ title, items, onImageClick }) => (
             <section className="container mx-auto px-4 py-12">
-                <AnimateOnLoad delay={100}>
+                <AnimateOnLoad delay={0}>
                     <h2 className="text-4xl font-extrabold text-center mb-10 text-[#8c542c]">
                         {title}
                     </h2>
@@ -214,7 +246,7 @@
             return (
                 <div className="min-h-screen">
                     <header className="text-center pt-8">
-                        <img src="1.png" className="w-40 mx-auto" />
+                        <img src="logo.png" className="w-52 mx-auto" />
                     </header>
 
                     <CategoryToggle
